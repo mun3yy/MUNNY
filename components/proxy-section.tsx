@@ -63,8 +63,10 @@ export default function ProxySection() {
       }
 
       // Create proxied URL using Ultraviolet
-      const encodedUrl = window.Ultraviolet.codec.xor.encode(processedUrl)
-      const proxiedUrl = "/service/" + encodedUrl
+      // Use the global Ultraviolet object that's loaded from the script
+      const uvConfig = window.__uv$config
+      const encodedUrl = uvConfig.encodeUrl(processedUrl)
+      const proxiedUrl = uvConfig.prefix + encodedUrl
 
       setProxyUrl(proxiedUrl)
     } catch (err) {

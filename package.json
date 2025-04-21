@@ -60,7 +60,6 @@
     "zod": "^3.24.1",
     "@emotion/is-prop-valid": "latest",
     "framer-motion": "latest",
-    "@stdlib/ultraviolet": "latest",
     "express": "latest",
     "@tomphttp/bare-server-node": "latest",
     "path": "latest",

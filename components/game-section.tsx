@@ -83,8 +83,9 @@ export default function GameSection() {
 
       if (originalUrl) {
         // Create proxied URL using Ultraviolet
-        const encodedUrl = window.Ultraviolet.codec.xor.encode(originalUrl)
-        const proxiedUrl = "/service/" + encodedUrl
+        const uvConfig = window.__uv$config
+        const encodedUrl = uvConfig.encodeUrl(originalUrl)
+        const proxiedUrl = uvConfig.prefix + encodedUrl
 
         // Create a new game object with the proxied URL
         const proxiedGame = {
